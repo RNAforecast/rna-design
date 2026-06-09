@@ -33,6 +33,8 @@ jobs:
 
       - name: Build site
         run: pelican -o output -s publishconf.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
