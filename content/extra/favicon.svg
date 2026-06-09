@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="8" fill="#0A0E1A"/>
+  <!-- Stem base pairs -->
+  <line x1="10" y1="22" x2="22" y2="22" stroke="#00C2B2" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="9"  y1="18" x2="23" y2="18" stroke="#00C2B2" stroke-width="1.8" stroke-linecap="round"/>
+  <line x1="8"  y1="14" x2="24" y2="14" stroke="#00C2B2" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Left hairpin loop -->
+  <path d="M8,14 Q6,10 8,7 Q10,4 13,6 Q15,8 13,11 Q11,13 8,14"
+        stroke="#7B4FFF" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  <!-- Right hairpin loop -->
+  <path d="M24,14 Q26,10 24,7 Q22,4 19,6 Q17,8 19,11 Q21,13 24,14"
+        stroke="#7B4FFF" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+</svg>

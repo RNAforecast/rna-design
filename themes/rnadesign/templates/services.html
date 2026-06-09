@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block title %}Services | {{ SITENAME }}{% endblock %}
+{% block meta_description %}End-to-end computational RNA consulting — structure prediction, de novo design, and ViennaRNA training.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page hero ─────────────────────────────────────────── -->
+<section class="page-hero">
+    <div class="container page-hero__inner">
+        <span class="section-tag">Services</span>
+        <h1>RNA Design Services</h1>
+        <p class="page-hero__sub">
+            End-to-end computational consulting — from exploratory analysis
+            to publication-ready results.
+        </p>
+    </div>
+</section>
+
+<!-- ── Service sections ──────────────────────────────────── -->
+<div class="services-content container">
+    {{ page.content }}
+</div>
+
+<!-- ── Engagement models ─────────────────────────────────── -->
+<section class="engagement" aria-labelledby="engagement-heading">
+    <div class="container">
+        <h2 id="engagement-heading">Engagement Models</h2>
+        <div class="engagement__grid">
+
+            <div class="engagement-card">
+                <div class="engagement-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                        <circle cx="20" cy="20" r="17" stroke="#00C2B2" stroke-width="1.5" fill="none" opacity="0.35"/>
+                        <path d="M13 20 Q16 14 20 14 Q24 14 27 20 Q24 26 20 26 Q16 26 13 20Z" stroke="#00C2B2" stroke-width="1.5" fill="none"/>
+                        <circle cx="20" cy="20" r="3" fill="#00C2B2"/>
+                    </svg>
+                </div>
+                <h3>Advisory Call</h3>
+                <p class="engagement-card__desc">
+                    A focused 60-minute session to review your RNA problem,
+                    interpret results, or map out a computational strategy.
+                    Ideal before committing to a larger project.
+                </p>
+                <ul class="engagement-card__features">
+                    <li>60-minute video call</li>
+                    <li>Written summary provided</li>
+                    <li>Follow-up Q&amp;A via email</li>
+                </ul>
+            </div>
+
+            <div class="engagement-card engagement-card--featured">
+                <div class="engagement-card__badge">Most popular</div>
+                <div class="engagement-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                        <rect x="5" y="5" width="30" height="30" rx="6" stroke="#7B4FFF" stroke-width="1.5" fill="none" opacity="0.35"/>
+                        <path d="M13 16 H27 M13 20 H22 M13 24 H25" stroke="#7B4FFF" stroke-width="1.8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Project Retainer</h3>
+                <p class="engagement-card__desc">
+                    Ongoing access to deep computational analysis — structured
+                    as a monthly retainer. Covers analysis, pipeline development,
+                    and regular check-ins.
+                </p>
+                <ul class="engagement-card__features">
+                    <li>Defined monthly deliverables</li>
+                    <li>Priority turnaround</li>
+                    <li>Slack or email async support</li>
+                    <li>Monthly progress report</li>
+                </ul>
+            </div>
+
+            <div class="engagement-card">
+                <div class="engagement-card__icon" aria-hidden="true">
+                    <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="36" height="36">
+                        <circle cx="13" cy="20" r="5" stroke="#00C2B2" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <circle cx="27" cy="20" r="5" stroke="#7B4FFF" stroke-width="1.5" fill="none" opacity="0.5"/>
+                        <path d="M18 17 Q20 14 22 17 Q20 20 18 17Z" stroke="#00C2B2" stroke-width="1.2" fill="none"/>
+                        <path d="M18 23 Q20 26 22 23 Q20 20 18 23Z" stroke="#7B4FFF" stroke-width="1.2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Research Collaboration</h3>
+                <p class="engagement-card__desc">
+                    Co-authorship on research projects where deep computational
+                    RNA expertise is integral — from grant application through
+                    manuscript submission.
+                </p>
+                <ul class="engagement-card__features">
+                    <li>Joint experimental design</li>
+                    <li>Manuscript co-authorship</li>
+                    <li>Grant writing support</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ── CTA ───────────────────────────────────────────────── -->
+<section class="cta-band" aria-labelledby="services-cta-heading">
+    <div class="container cta-band__inner">
+        <h2 id="services-cta-heading">Ready to start?</h2>
+        <a href="{{ SITEURL }}/contact.html" class="btn btn--teal">Get in Touch</a>
+    </div>
+</section>
+
+{% endblock %}

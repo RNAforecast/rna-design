@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+
+{% block title %}Research | {{ SITENAME }}{% endblock %}
+{% block meta_description %}Peer-reviewed publications and active research directions from Michael T. Wolfinger's group at the University of Vienna.{% endblock %}
+
+{% block content %}
+
+<!-- ── Page hero ─────────────────────────────────────────── -->
+<section class="page-hero">
+    <div class="container page-hero__inner">
+        <span class="section-tag">Research</span>
+        <h1>Publications &amp; Research</h1>
+        <p class="page-hero__sub">
+            Peer-reviewed work at the intersection of RNA biology,
+            computational structural biology, and machine learning.
+        </p>
+    </div>
+</section>
+
+<!-- ── Bridge + active directions (RST-rendered) ─────────── -->
+<div class="research-intro container">
+    {{ page.content }}
+</div>
+
+<!-- ── Publications ──────────────────────────────────────── -->
+<section class="pub-list-section" aria-labelledby="publications-heading">
+    <div class="container">
+        <h2 id="publications-heading" class="sr-only">Publications</h2>
+
+        {% if PUBLICATIONS_FULL %}
+        <ol class="pub-list" reversed>
+            {% for pub in PUBLICATIONS_FULL %}
+            <li class="pub-item" id="pub-{{ loop.index }}">
+
+                <div class="pub-item__year-rail">
+                    <span class="pub-item__year">{{ pub.year }}</span>
+                </div>
+
+                <div class="pub-item__body">
+                    <h3 class="pub-item__title">{{ pub.title }}</h3>
+
+                    <p class="pub-item__authors">{{ pub.authors | safe }}</p>
+
+                    <div class="pub-item__meta">
+                        <span class="pub-item__journal">{{ pub.journal }}</span>
+                        <span class="pub-item__citation">{{ pub.citation }}</span>
+                        <span class="pub-item__type pub-item__type--{{ pub.type | lower | replace(' ', '-') }}">
+                            {{ pub.type }}
+                        </span>
+                    </div>
+
+                    <div class="pub-item__links">
+                        <a href="{{ pub.doi_url }}"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="pub-item__doi">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            {{ pub.doi_text }}
+                        </a>
+                    </div>
+
+                    <button class="abstract-toggle pub-item__abstract-toggle" aria-expanded="false" type="button">
+                        Show summary
+                    </button>
+                    <div class="abstract-body pub-item__abstract" hidden>
+                        <p>{{ pub.summary }}</p>
+                    </div>
+                </div>
+
+            </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+
+    </div>
+</section>
+
+<!-- ── CTA band ──────────────────────────────────────────── -->
+<section class="cta-band" aria-labelledby="research-cta-heading">
+    <div class="container cta-band__inner">
+        <h2 id="research-cta-heading">Interested in a collaboration?</h2>
+        <a href="{{ SITEURL }}/contact.html" class="btn btn--teal">Get in Touch</a>
+    </div>
+</section>
+
+{% endblock %}
