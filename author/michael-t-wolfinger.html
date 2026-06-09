@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Expert consulting in RNA secondary structure prediction, de novo RNA design, co-transcriptional folding, and ViennaRNA ecosystem development.">
+    <title>RNA Design - Articles by Michael T. Wolfinger</title>
+
+    <link rel="icon" type="image/svg+xml" href="https://rna-design.com/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=JetBrains+Mono:wght@300;400;500&display=swap">
+    <link rel="stylesheet" href="https://rna-design.com/theme/css/main.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__inner">
+            <a href="https://rna-design.com/" class="nav__logo" aria-label="RNA Design home">
+                <span class="nav__logo-mark">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <circle cx="14" cy="14" r="13" stroke="url(#logoGrad)" stroke-width="1.5"/>
+                        <path d="M8 10 Q14 6 20 10 Q14 14 8 18 Q14 22 20 18" stroke="url(#logoGrad)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="logoGrad" x1="0" y1="0" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                                <stop offset="0%" stop-color="#00C2B2"/>
+                                <stop offset="100%" stop-color="#7B4FFF"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </span>
+                <span class="nav__logo-text">RNA<em>Design</em></span>
+            </a>
+
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span>
+            </button>
+
+            <ul class="nav__links" id="navLinks" role="list">
+                <li><a href="https://rna-design.com/" class="nav__link">Home</a></li>
+                <li><a href="https://rna-design.com/services.html" class="nav__link">Services</a></li>
+                <li><a href="https://rna-design.com/research.html" class="nav__link">Research</a></li>
+                <li><a href="https://rna-design.com/about.html" class="nav__link">About</a></li>
+                <li><a href="https://rna-design.com/contact.html" class="nav__link nav__link--cta">Start a Project</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page content -->
+    <main id="main-content">
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__grid-lines"></div>
+
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <div class="hero__eyebrow">Computational RNA Biology</div>
+      <h1 class="hero__h1">
+        Where sequence<br>
+        <span>becomes structure.</span>
+      </h1>
+      <p class="hero__sub">
+        Expert consulting at the intersection of RNA biophysics, computational design,
+        and machine learning — translating molecular complexity into therapeutic and
+        synthetic biology applications.
+      </p>
+      <div class="hero__actions">
+        <a href="https://rna-design.com/contact.html" class="btn btn--primary">
+          Start a Project
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="https://rna-design.com/research.html" class="btn btn--ghost">View Research</a>
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-label="RNA secondary structure illustration">
+      <svg class="hero__rna-canvas" viewBox="0 0 520 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="RNA secondary structure with stem-loops and energy annotation">
+        <defs>
+          <radialGradient id="glowCenter" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="rgba(0,194,178,0.25)"/>
+            <stop offset="100%" stop-color="transparent"/>
+          </radialGradient>
+          <linearGradient id="strandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#00C2B2"/>
+            <stop offset="100%" stop-color="#7B4FFF"/>
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- Glow background -->
+        <ellipse cx="260" cy="240" rx="200" ry="180" fill="url(#glowCenter)" opacity=".6"/>
+
+        <!-- Stem 1 (left vertical) -->
+        <line x1="180" y1="120" x2="180" y2="200" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+        <line x1="200" y1="120" x2="200" y2="200" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+        <!-- Base pairs (stem 1) -->
+        <line x1="180" y1="130" x2="200" y2="130" stroke="rgba(0,194,178,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="180" y1="148" x2="200" y2="148" stroke="rgba(0,194,178,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="180" y1="166" x2="200" y2="166" stroke="rgba(0,194,178,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="180" y1="184" x2="200" y2="184" stroke="rgba(0,194,178,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <!-- Loop 1 (hairpin) -->
+        <path d="M 180 200 Q 150 240 180 280" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        <path d="M 200 200 Q 230 240 200 280" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        <!-- Loop nucleotides -->
+        <circle cx="160" cy="228" r="4" fill="#00C2B2" opacity=".8" class="rna-path"/>
+        <circle cx="157" cy="248" r="4" fill="#7B4FFF" opacity=".8" class="rna-path"/>
+        <circle cx="163" cy="266" r="4" fill="#00C2B2" opacity=".8" class="rna-path"/>
+
+        <!-- Main strand backbone (right side) -->
+        <path d="M 200 120 Q 260 80 320 120" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        <path d="M 200 280 Q 260 320 320 280" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+
+        <!-- Stem 2 (right vertical) -->
+        <line x1="320" y1="120" x2="320" y2="200" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+        <line x1="340" y1="120" x2="340" y2="200" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" stroke-linecap="round" filter="url(#glow)"/>
+        <!-- Base pairs (stem 2) -->
+        <line x1="320" y1="135" x2="340" y2="135" stroke="rgba(123,79,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="320" y1="153" x2="340" y2="153" stroke="rgba(123,79,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="320" y1="171" x2="340" y2="171" stroke="rgba(123,79,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <line x1="320" y1="189" x2="340" y2="189" stroke="rgba(123,79,255,0.4)" stroke-width="1.2" stroke-dasharray="2 2" class="rna-path"/>
+        <!-- Loop 2 (internal) -->
+        <path d="M 320 200 Q 290 230 320 280" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+        <path d="M 340 200 Q 370 230 340 280" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round" filter="url(#glow)"/>
+
+        <!-- 5' and 3' tails -->
+        <path d="M 180 120 L 160 90 L 148 65" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M 340 120 L 360 90 L 374 65" class="rna-path" stroke="url(#strandGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- Labels -->
+        <text x="138" y="58" font-family="JetBrains Mono, monospace" font-size="11" fill="#00C2B2" opacity=".8">5'</text>
+        <text x="376" y="58" font-family="JetBrains Mono, monospace" font-size="11" fill="#7B4FFF" opacity=".8">3'</text>
+
+        <!-- Nucleotide bubbles along backbone -->
+        <circle cx="220" cy="82" r="5" fill="#00C2B2" opacity=".5"/>
+        <circle cx="244" cy="74" r="5" fill="#7B4FFF" opacity=".45"/>
+        <circle cx="268" cy="74" r="5" fill="#00C2B2" opacity=".5"/>
+        <circle cx="292" cy="82" r="5" fill="#7B4FFF" opacity=".45"/>
+        <circle cx="220" cy="318" r="5" fill="#7B4FFF" opacity=".45"/>
+        <circle cx="244" cy="326" r="5" fill="#00C2B2" opacity=".5"/>
+        <circle cx="268" cy="326" r="5" fill="#7B4FFF" opacity=".45"/>
+        <circle cx="292" cy="318" r="5" fill="#00C2B2" opacity=".5"/>
+
+        <!-- Energy annotation -->
+        <rect x="60" y="340" width="160" height="52" rx="8" fill="rgba(26,35,64,0.9)" stroke="rgba(45,58,92,0.8)" stroke-width="1"/>
+        <text x="76" y="360" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(0,194,178,0.7)" letter-spacing="0.08em">ΔG = −18.4 kcal/mol</text>
+        <text x="76" y="378" font-family="JetBrains Mono, monospace" font-size="9" fill="rgba(123,79,255,0.7)" letter-spacing="0.08em">((((....))))(((...)))</text>
+
+        <!-- MFE centre dot -->
+        <circle cx="260" cy="200" r="6" fill="none" stroke="url(#strandGrad)" stroke-width="1.5" opacity=".4"/>
+        <circle cx="260" cy="200" r="2" fill="url(#strandGrad)" opacity=".6"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="hero__bracket-strip" aria-hidden="true"></div>
+</section>
+
+<!-- ============================================================
+     STATS
+     ============================================================ -->
+<div class="stats-bar reveal" aria-label="Key facts">
+  <div class="stats-bar__inner container">
+    <div>
+      <div class="stat__number">50+</div>
+      <div class="stat__label">Publications</div>
+    </div>
+    <div>
+      <div class="stat__number">25+</div>
+      <div class="stat__label">Years in RNA Research</div>
+    </div>
+    <div>
+      <div class="stat__number">ViennaRNA</div>
+      <div class="stat__label">Core Contributor</div>
+    </div>
+    <div>
+      <div class="stat__number">Functional RNA</div>
+      <div class="stat__label">De Novo Design</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     SERVICES
+     ============================================================ -->
+<section class="section" aria-labelledby="services-heading">
+  <div class="section__inner">
+    <div class="section__label">What We Do</div>
+    <h2 class="section__h2 reveal" id="services-heading">Expert consulting across the RNA design pipeline</h2>
+    <p class="section__lead reveal">From raw sequence to functional RNA molecule — computational, structural, and experimental design support for academic labs, biotech startups, and pharma R&amp;D.</p>
+
+    <div class="services-grid">
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 18 Q24 12 34 18 Q24 24 14 30 Q24 36 34 30" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="service-card__title">RNA Secondary Structure Prediction</div>
+        <div class="service-card__body">Minimum free energy folding, partition functions, and ensemble analysis using ViennaRNA, RNAfold, and custom pipeline development. Comparative and kinetic approaches included.</div>
+        <span class="service-card__tag">ViennaRNA · RNAfold · RNAalifold</span>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M8 24 L20 12 L28 20 L36 8 L44 16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M8 36 L20 28 L28 34 L36 22 L44 30" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="8" y1="24" x2="8" y2="36" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="44" y1="16" x2="44" y2="30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-card__title">Co-transcriptional Folding</div>
+        <div class="service-card__body">Energy landscape analysis of RNA folding during transcription. Barriers algorithm, disconnectivity graphs, and kinetic pathway identification for riboswitches and regulatory elements.</div>
+        <span class="service-card__tag">Barriers · Treekin · Energy Landscapes</span>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <polygon points="24,6 42,18 42,30 24,42 6,30 6,18" stroke="currentColor" stroke-width="1.5" fill="none"/>
+          <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="24" y1="18" x2="24" y2="10" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <line x1="30" y1="27" x2="38" y2="31" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
+          <line x1="18" y1="27" x2="10" y2="31" stroke="currentColor" stroke-width="1.2" stroke-dasharray="2 2"/>
+        </svg>
+        <div class="service-card__title">De Novo RNA Design</div>
+        <div class="service-card__body">Computational design of functional RNA elements including xrRNAs, ribozymes, and PRF-inducing pseudoknots. Inverse folding, NUPACK, and structure-guided sequence optimization.</div>
+        <span class="service-card__tag">xrRNA · Pseudoknots · Inverse Folding</span>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="6" y="10" width="36" height="28" rx="4" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M14 20 L20 26 L28 18 L34 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="14" cy="20" r="2" fill="currentColor"/>
+          <circle cx="34" cy="24" r="2" fill="currentColor"/>
+        </svg>
+        <div class="service-card__title">Machine Learning for RNA</div>
+        <div class="service-card__body">Neural network approaches to RNA structure prediction, sequence-structure mapping, and fitness landscape modelling. Integration of ML models into wet-lab design pipelines.</div>
+        <span class="service-card__tag">Deep Learning · Structure Prediction · NLP</span>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="32" cy="32" r="6" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="32" cy="16" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="32" r="4" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="22" y1="16" x2="28" y2="16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="16" y1="22" x2="16" y2="28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="22" y1="32" x2="26" y2="32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="32" y1="22" x2="32" y2="26" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <div class="service-card__title">Comparative RNA Virology</div>
+        <div class="service-card__body">Evolutionary analysis of viral RNA structures. Conservation-guided identification of functional elements in flavivirus, alphavirus, and other positive-sense RNA virus genomes.</div>
+        <span class="service-card__tag">Arboviruses · Structural Conservation · Phylogenetics</span>
+      </div>
+
+      <div class="service-card reveal">
+        <svg class="service-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M10 38 L10 20 L18 26 L24 14 L30 22 L38 10 L38 38 Z" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linejoin="round"/>
+        </svg>
+        <div class="service-card__title">Grant &amp; Manuscript Support</div>
+        <div class="service-card__body">Computational strategy design for FWF, ERC, and NIH grant proposals. Manuscript co-authorship, peer review preparation, and figure production for RNA structure papers.</div>
+        <span class="service-card__tag">FWF · ERC · Collaboration</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FEATURED RESEARCH
+     ============================================================ -->
+<section class="section section--alt" aria-labelledby="research-teaser-heading">
+  <div class="section__inner">
+    <div class="section__label">Featured Work</div>
+    <h2 class="section__h2 reveal" id="research-teaser-heading">Recent research directions</h2>
+    <p class="section__lead reveal">Bridging rigorous biophysics with practical RNA engineering across therapeutic design and fundamental structural biology.</p>
+
+    <div class="pub-list">
+        <div class="pub-item reveal">
+          <div class="pub-item__year">2026</div>
+          <div>
+            <div class="pub-item__title">Rational design of mechanically active RNAs: de novo engineering of functional exoribonuclease-resistant RNAs</div>
+            <div class="pub-item__journal">Nucleic Acids Res.</div>
+          </div>
+        </div>
+        <div class="pub-item reveal">
+          <div class="pub-item__year">2025</div>
+          <div>
+            <div class="pub-item__title">Identification of conserved RNA regulatory switches in living cells using RNA secondary structure ensemble mapping and covariation analysis</div>
+            <div class="pub-item__journal">Nature Biotechnology</div>
+          </div>
+        </div>
+        <div class="pub-item reveal">
+          <div class="pub-item__year">2025</div>
+          <div>
+            <div class="pub-item__title">From structure to function: Computational insights into Musashi-RNA complexes in the context of viral pathogenesis</div>
+            <div class="pub-item__journal">Science Asia</div>
+          </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 2.5rem; text-align: center;">
+      <a href="https://rna-design.com/research.html" class="btn btn--ghost">View All Research →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA BAND
+     ============================================================ -->
+<section class="section" aria-labelledby="cta-heading">
+  <div class="section__inner section__inner--center">
+    <div class="section__label section__label--center">Let's Collaborate</div>
+    <h2 class="section__h2 reveal section__h2--center" id="cta-heading">Have an RNA design challenge?</h2>
+    <p class="section__lead reveal section__lead--center">Whether you're designing therapeutic oligonucleotides, engineering riboswitches, or need an expert second opinion on your structural data — let's talk.</p>
+    <a href="https://rna-design.com/contact.html" class="btn btn--primary reveal" style="display: inline-flex;">
+      Start a Conversation
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__inner container">
+            <div class="footer__brand">
+                <span class="footer__logo">RNA<em>Design</em></span>
+                <p class="footer__tagline">
+                    Computational RNA design, structure prediction, and
+                    bioinformatics consulting for research and industry.
+                </p>
+            </div>
+            <div class="footer__cols">
+                <div class="footer__col">
+                    <h4 class="footer__heading">Expertise</h4>
+                    <ul>
+                        <li><a href="https://rna-design.com/services.html">Structure Prediction</a></li>
+                        <li><a href="https://rna-design.com/services.html">De Novo Design</a></li>
+                        <li><a href="https://rna-design.com/services.html">Co-transcriptional Folding</a></li>
+                        <li><a href="https://rna-design.com/services.html">ViennaRNA Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Research</h4>
+                    <ul>
+                        <li><a href="https://rna-design.com/research.html">Publications</a></li>
+                        <li><a href="https://rna-design.com/research.html">xrRNA Design</a></li>
+                        <li><a href="https://rna-design.com/research.html">PRF Pseudoknots</a></li>
+                        <li><a href="https://michaelwolfinger.com" target="_blank" rel="noopener noreferrer">Academic Site ↗</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__heading">Contact</h4>
+                    <ul>
+                        <li><a href="mailto:michael.wolfinger@univie.ac.at">michael.wolfinger@univie.ac.at</a></li>
+                        <li><a href="https://rna-design.com/contact.html">Project Inquiry</a></li>
+                        <li>Vienna, Austria</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container footer__bottom-inner">
+                <span>&copy; <span id="footer-year">2026</span> RNA Design &middot; Michael T. Wolfinger</span>
+                <span class="footer__bracket"><span class="mono">(((...)))</span></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://rna-design.com/theme/js/main.js"></script>
+</body>
+</html>
