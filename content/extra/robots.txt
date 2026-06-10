@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /legal.html
 
 Sitemap: https://rna-design.com/sitemap.xml
