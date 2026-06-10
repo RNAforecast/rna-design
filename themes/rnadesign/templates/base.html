@@ -3,8 +3,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% block meta_description %}{{ SITEDESCRIPTION | default('') }}{% endblock %}">
-    <title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+    {% set page_title %}{% block title %}{{ SITENAME }}{% endblock %}{% endset %}
+    {% set page_desc %}{% block meta_description %}{{ SITEDESCRIPTION | default('') }}{% endblock %}{% endset %}
+    <meta name="description" content="{{ page_desc }}">
+    <title>{{ page_title }}</title>
+
+    <!-- Canonical -->
+    {% if page is defined and page.url %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ page.url }}">
+    {% elif article is defined and article.url %}
+    <link rel="canonical" href="{{ SITEURL }}/{{ article.url }}">
+    {% else %}
+    <link rel="canonical" href="{{ SITEURL }}/">
+    {% endif %}
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="{{ SITENAME }}">
+    <meta property="og:title"       content="{{ page_title }}">
+    <meta property="og:description" content="{{ page_desc }}">
+    {% if page is defined and page.url %}
+    <meta property="og:url" content="{{ SITEURL }}/{{ page.url }}">
+    {% elif article is defined and article.url %}
+    <meta property="og:url" content="{{ SITEURL }}/{{ article.url }}">
+    {% else %}
+    <meta property="og:url" content="{{ SITEURL }}/">
+    {% endif %}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary">
+    <meta name="twitter:title"       content="{{ page_title }}">
+    <meta name="twitter:description" content="{{ page_desc }}">
 
     <link rel="icon" type="image/svg+xml" href="{{ SITEURL }}/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
