@@ -61,6 +61,7 @@ SITEMAP = {
         'indexes':  'monthly',
         'pages':    'monthly',
     },
+    'exclude': ['legal.html'],
 }
 
 PUBLICATIONS_FULL = [
