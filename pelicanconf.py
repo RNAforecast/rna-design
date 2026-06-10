@@ -17,6 +17,14 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+ARCHIVES_SAVE_AS    = ''
+AUTHORS_SAVE_AS     = ''
+CATEGORIES_SAVE_AS  = ''
+TAGS_SAVE_AS        = ''
+AUTHOR_SAVE_AS      = ''
+CATEGORY_SAVE_AS    = ''
+TAG_SAVE_AS         = ''
+
 GOOGLE_SCHOLAR_URL = "https://scholar.google.at/citations?user=w0PHGnEAAAAJ&hl=en"
 CONTACT_EMAIL      = "michael.wolfinger@univie.ac.at"
 
